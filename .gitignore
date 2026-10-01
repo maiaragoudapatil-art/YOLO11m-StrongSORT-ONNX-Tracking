@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+yolo_env/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Ultralytics
+runs/
+
+# Dataset
+datasets/
+data/
+images/
+labels/
+
+# Videos
+*.avi
+*.mp4
+*.mov
+
+# Model Weights
+*.pt
+*.onnx
+*.engine
+*.tflite
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Metrics Outputs
+outputs/tracked_video.mp4
+outputs/tracked_video_onnx.mp4
+outputs/*.json
+outputs/*.csv
+``
