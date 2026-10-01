@@ -1,0 +1,10 @@
+ultralytics
+boxmot
+opencv-python
+pandas
+numpy
+onnx
+onnxruntime
+psutil
+torch
+torchvision

@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  yolo-tracker:
+    build: .
+    container_name: yolo11m-strongsort
+
+    volumes:
+      - ./videos:/app/videos
+      - ./outputs:/app/outputs
+
+    stdin_open: true
+    tty: true
+
+    command: python compare_pt_onnx.py
