@@ -4,26 +4,28 @@ import numpy as np
 import os
 import time
 import json
-
+from boxmot import StrongSort, OCSORT, DeepOCSORT
 from ultralytics import YOLO
 from boxmot import StrongSort
 
 import sys
+
 VIDEO_PATH = sys.argv[1]
 TRACKER_NAME = sys.argv[2]
-MODEL_PATH = "yolo11m.onnx"
+MODEL_PATH = "yolo11m.pt"
 
-OUTPUT_VIDEO = "Outputs/tracked_video_onnx.mp4"
-OUTPUT_CSV = "Outputs/tracking_results_onnx.csv"
-OUTPUT_JSON = "Outputs/benchmark_onnx.json"
+OUTPUT_VIDEO = "Outputs/tracked_video_pt.mp4"
+OUTPUT_CSV = "Outputs/tracking_results_pt.csv"
+OUTPUT_JSON = "Outputs/benchmark_pt.json"
 
 os.makedirs("Outputs", exist_ok=True)
 
-print("Loading ONNX Model...")
+print("Loading PT Model...")
 model = YOLO(MODEL_PATH)
 
 print("Loading " + TRACKER_NAME + "...")
 tracker = get_tracker(TRACKER_NAME)
+
 
 def get_tracker(name):
 
@@ -177,7 +179,7 @@ benchmark = {
     "project": {
         "model": "YOLO11m",
         "tracker": TRACKER_NAME,
-        "format": "ONNX"
+        "format": "PyTorch"
     },
 
     "video": {

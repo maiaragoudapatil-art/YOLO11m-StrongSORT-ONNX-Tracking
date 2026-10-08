@@ -1,5 +1,5 @@
 from ultralytics import YOLO
-from boxmot import StrongSort
+#from boxmot import StrongSort
 
 model = YOLO("yolo11m.pt")
 
